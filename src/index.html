@@ -1,1 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventario Hardware - 1º ASIR</title>
 
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .hidden {
+      display: none !important;
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      font-size: 20px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+
+    <div class="header-brand">
+      <div class="brand-icon">🖥️</div>
+
+      <div class="brand-text">
+        <div class="brand-title">Inventario Hardware</div>
+        <div class="brand-sub">Aula 1º ASIR</div>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Buscar producto, marca, modelo...">
+    </div>
+
+    <div class="header-actions">
+      <div class="badge-stat">
+        <div class="dot"></div>
+        <span>Sistema <strong>Operativo</strong></span>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+
+    <div class="sidebar-label">Categorías</div>
+
+    <a class="nav-item active" href="#dashboard">
+      <span class="nav-icon">📊</span>
+      Dashboard
+    </a>
+
+    <div id="sidebarCategories"></div>
+
+    <div class="sidebar-info">
+
+      <div class="info-block">
+
+        <div class="info-title">
+          ⚙ Estado General
+        </div>
+
+        <div class="info-row">
+          <span>Total Productos</span>
+          <strong id="infoProductos">0</strong>
+        </div>
+
+        <div class="info-row">
+          <span>Total Unidades</span>
+          <strong id="infoUnidades">0</strong>
+        </div>
+
+        <div class="info-row">
+          <span>Operatividad</span>
+          <strong id="infoOperatividad">0%</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main-content">
+
+    <!-- KPIs -->
+    <section class="kpi-grid">
+
+      <div class="kpi-card blue">
+        <div class="kpi-label">Categorías</div>
+        <div class="kpi-value" id="kpiCategorias">0</div>
+        <div class="kpi-sub">Tipos de hardware</div>
+        <div class="kpi-icon">📁</div>
+      </div>
+
+      <div class="kpi-card green">
+        <div class="kpi-label">Productos</div>
+        <div class="kpi-value" id="kpiProductos">0</div>
+        <div class="kpi-sub">Equipos registrados</div>
+        <div class="kpi-icon">🖥️</div>
+      </div>
+
+      <div class="kpi-card amber">
+        <div class="kpi-label">Unidades</div>
+        <div class="kpi-value" id="kpiUnidades">0</div>
+        <div class="kpi-sub">Inventario total</div>
+        <div class="kpi-icon">📦</div>
+      </div>
+
+      <div class="kpi-card red">
+        <div class="kpi-label">Bajas</div>
+        <div class="kpi-value" id="kpiBajas">0</div>
+        <div class="kpi-sub">Equipos dañados</div>
+        <div class="kpi-icon">⚠️</div>
+      </div>
+
+      <div class="kpi-card purple">
+        <div class="kpi-label">Operatividad</div>
+        <div class="kpi-value" id="kpiOperatividad">0%</div>
+        <div class="kpi-sub">Estado general</div>
+        <div class="kpi-icon">🚀</div>
+      </div>
+
+    </section>
+
+    <!-- PRODUCTOS -->
+    <div id="inventoryContent">
+      <div class="loading">
+        Cargando inventario...
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal-overlay" id="modalOverlay">
+
+  <div class="modal">
+
+    <div class="modal-header">
+
+      <div class="modal-icon" id="modalIcon">🖥️</div>
+
+      <div class="modal-title-block">
+
+        <div class="modal-id" id="modalId"></div>
+
+        <div class="modal-name" id="modalName"></div>
+
+        <div class="modal-meta">
+          <div class="meta-tag" id="modalMarca"></div>
+          <div class="meta-tag" id="modalModelo"></div>
+        </div>
+
+      </div>
+
+      <div class="modal-close" onclick="closeModal()">✕</div>
+
+    </div>
+
+    <div class="modal-body">
+
+      <div class="modal-grid">
+
+        <div class="modal-section">
+
+          <div class="modal-section-title">
+            Información
+          </div>
+
+          <div id="modalInfo"></div>
+
+        </div>
+
+        <div class="modal-section">
+
+          <div class="modal-section-title">
+            Estadísticas
+          </div>
+
+          <div id="modalStats"></div>
+
+        </div>
+
+      </div>
+
+      <div class="units-table-wrap">
+
+        <div class="units-table-title">
+          Unidades Registradas
+        </div>
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nº Serie</th>
+              <th>Estado</th>
+              <th>Puesto</th>
+            </tr>
+          </thead>
+
+          <tbody id="modalUnits"></tbody>
+
+        </table>
+
+      </div>
+
+      <div class="obs-block">
+        <div class="obs-icon">📝</div>
+        <div id="modalObs"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+
+const inventoryContent = document.getElementById("inventoryContent");
+const sidebarCategories = document.getElementById("sidebarCategories");
+const searchInput = document.getElementById("searchInput");
+
+let allProducts = [];
+
+fetch("../data/main_data.xml")
+  .then(res => res.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(xml => {
+
+    loadKPIs(xml);
+    renderInventory(xml);
+
+  });
+
+function loadKPIs(xml) {
+
+  document.getElementById("kpiCategorias").textContent =
+    xml.querySelector("total_categorias").textContent;
+
+  document.getElementById("kpiProductos").textContent =
+    xml.querySelector("total_productos").textContent;
+
+  document.getElementById("kpiUnidades").textContent =
+    xml.querySelector("total_unidades").textContent;
+
+  document.getElementById("kpiBajas").textContent =
+    xml.querySelector("unidades_baja").textContent;
+
+  document.getElementById("kpiOperatividad").textContent =
+    xml.querySelector("porcentaje_operatividad").textContent + "%";
+
+  document.getElementById("infoProductos").textContent =
+    xml.querySelector("total_productos").textContent;
+
+  document.getElementById("infoUnidades").textContent =
+    xml.querySelector("total_unidades").textContent;
+
+  document.getElementById("infoOperatividad").textContent =
+    xml.querySelector("porcentaje_operatividad").textContent + "%";
+}
+
+function renderInventory(xml) {
+
+  inventoryContent.innerHTML = "";
+
+  const categorias = xml.querySelectorAll("categoria");
+
+  categorias.forEach(categoria => {
+
+    const categoryName = categoria.getAttribute("nombre");
+
+    sidebarCategories.innerHTML += `
+      <a class="nav-item" href="#${categoryName}">
+        <span class="nav-icon">📂</span>
+        ${categoryName}
+      </a>
+    `;
+
+    const section = document.createElement("section");
+
+    section.className = "section";
+    section.id = categoryName;
+
+    section.innerHTML = `
+      <div class="section-header">
+
+        <div class="section-title">
+          <div class="cat-icon">🖥️</div>
+          ${categoryName}
+        </div>
+
+        <div class="section-line"></div>
+
+      </div>
+
+      <div class="products-grid"></div>
+    `;
+
+    const grid = section.querySelector(".products-grid");
+
+    categoria.querySelectorAll("producto").forEach(producto => {
+
+      const productData = extractProductData(producto);
+
+      allProducts.push(productData);
+
+      const operatividad =
+        Math.round((productData.operativa / productData.total) * 100);
+
+      const card = document.createElement("div");
+
+      card.className = "product-card";
+
+      card.innerHTML = `
+        <div class="card-overlay"></div>
+
+        <div class="card-header">
+
+          <div class="card-product-icon">
+            ${getIcon(productData.tipo)}
+          </div>
+
+          <div class="card-info">
+
+            <div class="card-id">${productData.id}</div>
+
+            <div class="card-name">
+              ${productData.nombre}
+            </div>
+
+            <div class="card-type">
+              ${productData.marca}
+            </div>
+
+          </div>
+
+          <div class="status-badge ok">
+            ${productData.estado}
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="quantity-display">
+
+            <div class="qty-block total">
+              <div class="qty-num">${productData.total}</div>
+              <div class="qty-label">TOTAL</div>
+            </div>
+
+            <div class="qty-block operat">
+              <div class="qty-num">${productData.operativa}</div>
+              <div class="qty-label">OK</div>
+            </div>
+
+            <div class="qty-block baja">
+              <div class="qty-num">${productData.baja}</div>
+              <div class="qty-label">BAJA</div>
+            </div>
+
+          </div>
+
+          <div class="progress-block">
+
+            <div class="progress-header">
+              <div class="progress-label">Operatividad</div>
+              <div class="progress-pct">${operatividad}%</div>
+            </div>
+
+            <div class="progress-bar">
+              <div class="progress-fill"
+                   style="width:${operatividad}%">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="specs-mini">
+
+            <div class="spec-row">
+              <div class="spec-key">Modelo</div>
+              <div class="spec-val">${productData.modelo}</div>
+            </div>
+
+            <div class="spec-row">
+              <div class="spec-key">Ubicación</div>
+              <div class="spec-val">${productData.ubicacion}</div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card-footer">
+
+          <div class="location-tag">
+            📍 <span>${productData.ubicacion}</span>
+          </div>
+
+          <button class="card-btn">
+            Ver detalle
+          </button>
+
+        </div>
+      `;
+
+      card.addEventListener("click", () => openModal(productData));
+
+      grid.appendChild(card);
+
+    });
+
+    inventoryContent.appendChild(section);
+
+  });
+
+}
+
+function extractProductData(producto) {
+
+  return {
+    id: producto.getAttribute("id"),
+    nombre: producto.querySelector("nombre").textContent,
+    marca: producto.querySelector("marca").textContent,
+    modelo: producto.querySelector("modelo").textContent,
+    tipo: producto.querySelector("tipo").textContent,
+    estado: producto.querySelector("estado").textContent,
+    ubicacion: producto.querySelector("ubicacion").textContent,
+    total: producto.querySelector("cantidad_total").textContent,
+    operativa: producto.querySelector("cantidad_operativa").textContent,
+    baja: producto.querySelector("cantidad_baja").textContent,
+    observaciones: producto.querySelector("observaciones")?.textContent || "",
+    unidades: [...producto.querySelectorAll("unidad")].map(u => ({
+      id: u.getAttribute("id"),
+      serie: u.getAttribute("num_serie"),
+      estado: u.getAttribute("estado"),
+      puesto: u.getAttribute("puesto")
+    }))
+  };
+}
+
+function openModal(product) {
+
+  document.getElementById("modalOverlay").classList.add("open");
+
+  document.getElementById("modalId").textContent = product.id;
+  document.getElementById("modalName").textContent = product.nombre;
+  document.getElementById("modalMarca").textContent = product.marca;
+  document.getElementById("modalModelo").textContent = product.modelo;
+  document.getElementById("modalIcon").textContent = getIcon(product.tipo);
+
+  document.getElementById("modalInfo").innerHTML = `
+    <div class="detail-row">
+      <div class="detail-key">Tipo</div>
+      <div class="detail-val">${product.tipo}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-key">Ubicación</div>
+      <div class="detail-val">${product.ubicacion}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-key">Estado</div>
+      <div class="detail-val">${product.estado}</div>
+    </div>
+  `;
+
+  document.getElementById("modalStats").innerHTML = `
+    <div class="detail-row">
+      <div class="detail-key">Total</div>
+      <div class="detail-val">${product.total}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-key">Operativos</div>
+      <div class="detail-val">${product.operativa}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="detail-key">Baja</div>
+      <div class="detail-val">${product.baja}</div>
+    </div>
+  `;
+
+  document.getElementById("modalObs").textContent =
+    product.observaciones;
+
+  const tbody = document.getElementById("modalUnits");
+
+  tbody.innerHTML = "";
+
+  product.unidades.forEach(unidad => {
+
+    tbody.innerHTML += `
+      <tr>
+        <td>${unidad.id}</td>
+        <td>${unidad.serie}</td>
+        <td>
+          <span class="tbl-status ok">
+            ${unidad.estado}
+          </span>
+        </td>
+        <td>${unidad.puesto}</td>
+      </tr>
+    `;
+  });
+
+}
+
+function closeModal() {
+  document.getElementById("modalOverlay")
+    .classList.remove("open");
+}
+
+window.onclick = function(e) {
+  if (e.target.id === "modalOverlay") {
+    closeModal();
+  }
+}
+
+searchInput.addEventListener("input", e => {
+
+  const value = e.target.value.toLowerCase();
+
+  document.querySelectorAll(".product-card").forEach(card => {
+
+    const text = card.textContent.toLowerCase();
+
+    card.style.display =
+      text.includes(value)
+      ? "block"
+      : "none";
+  });
+
+});
+
+function getIcon(tipo) {
+
+  tipo = tipo.toLowerCase();
+
+  if(tipo.includes("ordenador")) return "🖥️";
+  if(tipo.includes("monitor")) return "🖵";
+  if(tipo.includes("switch")) return "🔀";
+  if(tipo.includes("wifi")) return "📡";
+  if(tipo.includes("impresora")) return "🖨️";
+  if(tipo.includes("herramienta")) return "🧰";
+  if(tipo.includes("teclado")) return "⌨️";
+
+  return "📦";
+}
+
+</script>
+
+</body>
+</html>
