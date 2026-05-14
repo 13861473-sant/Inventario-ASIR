@@ -13,7 +13,7 @@
 
   <!-- ==================== CATEGORÍA: EQUIPOS DE CÓMPUTO ==================== -->
   <categoria id="CAT-001" nombre="Equipos de Cómputo">
-
+    <imagen>../src/imagenes/PC.jpeg</imagen>
     <producto id="PROD-001">
       <nombre>Ordenador HP EliteDesk 800 G5</nombre>
       <marca>HP</marca>
@@ -107,7 +107,7 @@
 
   <!-- ==================== CATEGORÍA: PERIFÉRICOS ==================== -->
   <categoria id="CAT-002" nombre="Periféricos">
-
+    <imagen>imagenes/perifericos.jpg</imagen>
     <producto id="PROD-003">
       <nombre>Teclado HP Smart Card CCID</nombre>
       <marca>HP</marca>
@@ -199,7 +199,7 @@
 
   <!-- ==================== CATEGORÍA: RED Y CONECTIVIDAD ==================== -->
   <categoria id="CAT-003" nombre="Red y Conectividad">
-
+    <imagen>imagenes/red.jpg</imagen>
     <producto id="PROD-005">
       <nombre>Switch Cisco Catalyst WS-C2960X-48</nombre>
       <marca>Cisco</marca>
@@ -295,7 +295,7 @@
 
   <!-- ==================== CATEGORÍA: IMPRESIÓN ==================== -->
   <categoria id="CAT-004" nombre="Impresión y Fabricación">
-
+    <imagen>imagenes/impresion.jpg</imagen>
     <producto id="PROD-008">
       <nombre>Impresora 3D Creality Ender-3 V2</nombre>
       <marca>Creality</marca>
@@ -348,7 +348,7 @@
 
   <!-- ==================== CATEGORÍA: HERRAMIENTAS ==================== -->
   <categoria id="CAT-005" nombre="Herramientas y Kits">
-
+    <imagen>imagenes/herramientas.jpg</imagen>
     <producto id="PROD-010">
       <nombre>Kit de Herramientas para Montaje Hardware</nombre>
       <marca>Generic Pro Tools</marca>
