@@ -1,1 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
 
+  <!-- ============================================================
+       SCHEMA XSD - Inventario Hardware Aula 1º ASIR
+       Proyecto Final - Lenguaje de Marcas
+       Versión: 1.0
+       ============================================================ -->
+
+  <!-- ==================== TIPOS SIMPLES ==================== -->
+
+  <!-- Estado de una unidad individual -->
+  <xs:simpleType name="tipoEstadoUnidad">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Operativo"/>
+      <xs:enumeration value="Almacenado"/>
+      <xs:enumeration value="Baja"/>
+      <xs:enumeration value="Reparación"/>
+      <xs:enumeration value="Préstamo"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Estado general de un producto -->
+  <xs:simpleType name="tipoEstadoProducto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Activo"/>
+      <xs:enumeration value="Almacenado"/>
+      <xs:enumeration value="Discontinuado"/>
+      <xs:enumeration value="En reparación"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Tipo de ID de categoría (formato CAT-NNN) -->
+  <xs:simpleType name="tipoIdCategoria">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="CAT-[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Tipo de ID de producto (formato PROD-NNN) -->
+  <xs:simpleType name="tipoIdProducto">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="PROD-[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Cantidad: entero no negativo -->
+  <xs:simpleType name="tipoCantidad">
+    <xs:restriction base="xs:nonNegativeInteger"/>
+  </xs:simpleType>
+
+  <!-- Porcentaje: decimal entre 0 y 100 -->
+  <xs:simpleType name="tipoPorcentaje">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Fecha en formato ISO: YYYY-MM-DD -->
+  <xs:simpleType name="tipoFecha">
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+
+  <!-- Versión: patrón X.Y -->
+  <xs:simpleType name="tipoVersion">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+\.[0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Texto no vacío (mínimo 1 carácter) -->
+  <xs:simpleType name="tipoTextoRequerido">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="500"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ==================== TIPOS COMPLEJOS ==================== -->
+
+  <!-- Tipo: Metadatos del inventario -->
+  <xs:complexType name="tipoMetadata">
+    <xs:sequence>
+      <xs:element name="titulo"               type="tipoTextoRequerido"/>
+      <xs:element name="centro"               type="tipoTextoRequerido"/>
+      <xs:element name="aula"                 type="tipoTextoRequerido"/>
+      <xs:element name="fecha_actualizacion"  type="tipoFecha"/>
+      <xs:element name="responsable"          type="tipoTextoRequerido"/>
+      <xs:element name="version"              type="tipoVersion"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Tipo: Especificaciones de un producto (contenido flexible) -->
+  <xs:complexType name="tipoEspecificaciones">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Tipo: Una unidad individual de un producto -->
+  <xs:complexType name="tipoUnidad">
+    <xs:attribute name="id"         type="xs:string"          use="required"/>
+    <xs:attribute name="num_serie"  type="xs:string"          use="required"/>
+    <xs:attribute name="estado"     type="tipoEstadoUnidad"   use="required"/>
+    <xs:attribute name="puesto"     type="xs:string"          use="required"/>
+  </xs:complexType>
+
+  <!-- Tipo: Conjunto de unidades de un producto -->
+  <xs:complexType name="tipoUnidades">
+    <xs:sequence>
+      <xs:element name="unidad" type="tipoUnidad" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Tipo: Producto del inventario -->
+  <xs:complexType name="tipoProducto">
+    <xs:sequence>
+      <xs:element name="nombre"              type="tipoTextoRequerido"/>
+      <xs:element name="marca"               type="tipoTextoRequerido"/>
+      <xs:element name="modelo"              type="tipoTextoRequerido"/>
+      <xs:element name="tipo"                type="tipoTextoRequerido"/>
+      <xs:element name="estado"              type="tipoEstadoProducto"/>
+      <xs:element name="ubicacion"           type="tipoTextoRequerido"/>
+      <xs:element name="cantidad_total"      type="tipoCantidad"/>
+      <xs:element name="cantidad_operativa"  type="tipoCantidad"/>
+      <xs:element name="cantidad_baja"       type="tipoCantidad"/>
+      <xs:element name="especificaciones"    type="tipoEspecificaciones"/>
+      <xs:element name="unidades"            type="tipoUnidades"/>
+      <xs:element name="observaciones"       type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="tipoIdProducto" use="required"/>
+  </xs:complexType>
+
+  <!-- Tipo: Categoría del inventario -->
+  <xs:complexType name="tipoCategoria">
+    <xs:sequence>
+      <xs:element name="producto" type="tipoProducto" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id"      type="tipoIdCategoria" use="required"/>
+    <xs:attribute name="nombre"  type="xs:string"        use="required"/>
+  </xs:complexType>
+
+  <!-- Tipo: Resumen global del inventario -->
+  <xs:complexType name="tipoResumen">
+    <xs:sequence>
+      <xs:element name="total_categorias"       type="tipoCantidad"/>
+      <xs:element name="total_productos"        type="tipoCantidad"/>
+      <xs:element name="total_unidades"         type="tipoCantidad"/>
+      <xs:element name="unidades_operativas"    type="tipoCantidad"/>
+      <xs:element name="unidades_baja"          type="tipoCantidad"/>
+      <xs:element name="porcentaje_operatividad" type="tipoPorcentaje"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ==================== ELEMENTO RAÍZ ==================== -->
+  <xs:element name="inventario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="metadata"   type="tipoMetadata"/>
+        <xs:element name="categoria"  type="tipoCategoria" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="resumen"    type="tipoResumen"/>
+      </xs:sequence>
+    </xs:complexType>
+
+    <!-- ==================== RESTRICCIONES DE UNICIDAD ==================== -->
+
+    <!-- IDs de categorías deben ser únicos -->
+    <xs:unique name="unicidadCategoria">
+      <xs:selector xpath="categoria"/>
+      <xs:field    xpath="@id"/>
+    </xs:unique>
+
+    <!-- IDs de productos deben ser únicos en todo el inventario -->
+    <xs:unique name="unicidadProducto">
+      <xs:selector xpath="categoria/producto"/>
+      <xs:field    xpath="@id"/>
+    </xs:unique>
+
+    <!-- IDs de unidades deben ser únicos en todo el inventario -->
+    <xs:unique name="unicidadUnidad">
+      <xs:selector xpath="categoria/producto/unidades/unidad"/>
+      <xs:field    xpath="@id"/>
+    </xs:unique>
+
+    <!-- Números de serie de unidades deben ser únicos -->
+    <xs:unique name="unicidadNumSerie">
+      <xs:selector xpath="categoria/producto/unidades/unidad"/>
+      <xs:field    xpath="@num_serie"/>
+    </xs:unique>
+
+  </xs:element>
+
+</xs:schema>

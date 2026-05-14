@@ -1,1 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../schemas/schema.xsd">
 
+  <metadata>
+    <titulo>Inventario Hardware - Aula 1º ASIR</titulo>
+    <centro>IES Ejemplo</centro>
+    <aula>Aula de Redes - 1º ASIR</aula>
+    <fecha_actualizacion>2025-05-14</fecha_actualizacion>
+    <responsable>Departamento de Informática</responsable>
+    <version>1.0</version>
+  </metadata>
+
+  <!-- ==================== CATEGORÍA: EQUIPOS DE CÓMPUTO ==================== -->
+  <categoria id="CAT-001" nombre="Equipos de Cómputo">
+
+    <producto id="PROD-001">
+      <nombre>Ordenador HP EliteDesk 800 G5</nombre>
+      <marca>HP</marca>
+      <modelo>EliteDesk 800 G5</modelo>
+      <tipo>Ordenador de Sobremesa</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Puestos de alumnos</ubicacion>
+      <cantidad_total>30</cantidad_total>
+      <cantidad_operativa>30</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <procesador>Intel Core i5-9500</procesador>
+        <ram>8 GB DDR4</ram>
+        <almacenamiento>256 GB SSD</almacenamiento>
+        <sistema_operativo>Windows 10 Pro / Linux Ubuntu 22.04</sistema_operativo>
+        <puertos>USB 3.0 x4, DisplayPort, VGA, RJ45</puertos>
+      </especificaciones>
+      <unidades>
+        <unidad id="HP-PC-001" num_serie="HP800G5-001" estado="Operativo" puesto="P01"/>
+        <unidad id="HP-PC-002" num_serie="HP800G5-002" estado="Operativo" puesto="P02"/>
+        <unidad id="HP-PC-003" num_serie="HP800G5-003" estado="Operativo" puesto="P03"/>
+        <unidad id="HP-PC-004" num_serie="HP800G5-004" estado="Operativo" puesto="P04"/>
+        <unidad id="HP-PC-005" num_serie="HP800G5-005" estado="Operativo" puesto="P05"/>
+        <unidad id="HP-PC-006" num_serie="HP800G5-006" estado="Operativo" puesto="P06"/>
+        <unidad id="HP-PC-007" num_serie="HP800G5-007" estado="Operativo" puesto="P07"/>
+        <unidad id="HP-PC-008" num_serie="HP800G5-008" estado="Operativo" puesto="P08"/>
+        <unidad id="HP-PC-009" num_serie="HP800G5-009" estado="Operativo" puesto="P09"/>
+        <unidad id="HP-PC-010" num_serie="HP800G5-010" estado="Operativo" puesto="P10"/>
+        <unidad id="HP-PC-011" num_serie="HP800G5-011" estado="Operativo" puesto="P11"/>
+        <unidad id="HP-PC-012" num_serie="HP800G5-012" estado="Operativo" puesto="P12"/>
+        <unidad id="HP-PC-013" num_serie="HP800G5-013" estado="Operativo" puesto="P13"/>
+        <unidad id="HP-PC-014" num_serie="HP800G5-014" estado="Operativo" puesto="P14"/>
+        <unidad id="HP-PC-015" num_serie="HP800G5-015" estado="Operativo" puesto="P15"/>
+        <unidad id="HP-PC-016" num_serie="HP800G5-016" estado="Operativo" puesto="P16"/>
+        <unidad id="HP-PC-017" num_serie="HP800G5-017" estado="Operativo" puesto="P17"/>
+        <unidad id="HP-PC-018" num_serie="HP800G5-018" estado="Operativo" puesto="P18"/>
+        <unidad id="HP-PC-019" num_serie="HP800G5-019" estado="Operativo" puesto="P19"/>
+        <unidad id="HP-PC-020" num_serie="HP800G5-020" estado="Operativo" puesto="P20"/>
+        <unidad id="HP-PC-021" num_serie="HP800G5-021" estado="Operativo" puesto="P21"/>
+        <unidad id="HP-PC-022" num_serie="HP800G5-022" estado="Operativo" puesto="P22"/>
+        <unidad id="HP-PC-023" num_serie="HP800G5-023" estado="Operativo" puesto="P23"/>
+        <unidad id="HP-PC-024" num_serie="HP800G5-024" estado="Operativo" puesto="P24"/>
+        <unidad id="HP-PC-025" num_serie="HP800G5-025" estado="Operativo" puesto="P25"/>
+        <unidad id="HP-PC-026" num_serie="HP800G5-026" estado="Operativo" puesto="P26"/>
+        <unidad id="HP-PC-027" num_serie="HP800G5-027" estado="Operativo" puesto="P27"/>
+        <unidad id="HP-PC-028" num_serie="HP800G5-028" estado="Operativo" puesto="P28"/>
+        <unidad id="HP-PC-029" num_serie="HP800G5-029" estado="Operativo" puesto="P29"/>
+        <unidad id="HP-PC-030" num_serie="HP800G5-030" estado="Operativo" puesto="P30"/>
+      </unidades>
+      <observaciones>Equipos principales del aula para uso diario de los alumnos</observaciones>
+    </producto>
+
+    <producto id="PROD-002">
+      <nombre>Ordenador HP EliteDesk 800 G5 (Repuesto)</nombre>
+      <marca>HP</marca>
+      <modelo>EliteDesk 800 G5</modelo>
+      <tipo>Ordenador de Sobremesa - Repuesto</tipo>
+      <estado>Almacenado</estado>
+      <ubicacion>Almacén Departamento Informática</ubicacion>
+      <cantidad_total>15</cantidad_total>
+      <cantidad_operativa>15</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <procesador>Intel Core i5-9500</procesador>
+        <ram>8 GB DDR4</ram>
+        <almacenamiento>256 GB SSD</almacenamiento>
+        <sistema_operativo>Sin instalar</sistema_operativo>
+        <puertos>USB 3.0 x4, DisplayPort, VGA, RJ45</puertos>
+      </especificaciones>
+      <unidades>
+        <unidad id="HP-REP-001" num_serie="HP800G5-REP-001" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-002" num_serie="HP800G5-REP-002" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-003" num_serie="HP800G5-REP-003" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-004" num_serie="HP800G5-REP-004" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-005" num_serie="HP800G5-REP-005" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-006" num_serie="HP800G5-REP-006" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-007" num_serie="HP800G5-REP-007" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-008" num_serie="HP800G5-REP-008" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-009" num_serie="HP800G5-REP-009" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-010" num_serie="HP800G5-REP-010" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-011" num_serie="HP800G5-REP-011" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-012" num_serie="HP800G5-REP-012" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-013" num_serie="HP800G5-REP-013" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-014" num_serie="HP800G5-REP-014" estado="Almacenado" puesto="ALMACEN"/>
+        <unidad id="HP-REP-015" num_serie="HP800G5-REP-015" estado="Almacenado" puesto="ALMACEN"/>
+      </unidades>
+      <observaciones>Unidades de reserva para sustitución inmediata en caso de avería</observaciones>
+    </producto>
+
+  </categoria>
+
+  <!-- ==================== CATEGORÍA: PERIFÉRICOS ==================== -->
+  <categoria id="CAT-002" nombre="Periféricos">
+
+    <producto id="PROD-003">
+      <nombre>Teclado HP Smart Card CCID</nombre>
+      <marca>HP</marca>
+      <modelo>Smart Card CCID Keyboard</modelo>
+      <tipo>Teclado con Lector de Tarjeta Inteligente</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Puestos especiales</ubicacion>
+      <cantidad_total>5</cantidad_total>
+      <cantidad_operativa>5</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <conexion>USB 2.0</conexion>
+        <lector_tarjeta>CCID ISO 7816</lector_tarjeta>
+        <idioma>Español (ES)</idioma>
+        <retroiluminacion>No</retroiluminacion>
+        <cable>1.8 m</cable>
+      </especificaciones>
+      <unidades>
+        <unidad id="KB-SC-001" num_serie="HPSC-KB-001" estado="Operativo" puesto="P-ESPECIAL-01"/>
+        <unidad id="KB-SC-002" num_serie="HPSC-KB-002" estado="Operativo" puesto="P-ESPECIAL-02"/>
+        <unidad id="KB-SC-003" num_serie="HPSC-KB-003" estado="Operativo" puesto="P-ESPECIAL-03"/>
+        <unidad id="KB-SC-004" num_serie="HPSC-KB-004" estado="Operativo" puesto="P-ESPECIAL-04"/>
+        <unidad id="KB-SC-005" num_serie="HPSC-KB-005" estado="Operativo" puesto="P-ESPECIAL-05"/>
+      </unidades>
+      <observaciones>Teclados con lector de tarjeta inteligente para prácticas de seguridad</observaciones>
+    </producto>
+
+    <producto id="PROD-004">
+      <nombre>Monitor HP EliteDisplay E243</nombre>
+      <marca>HP</marca>
+      <modelo>EliteDisplay E243</modelo>
+      <tipo>Monitor IPS Full HD</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Puestos de alumnos y almacén</ubicacion>
+      <cantidad_total>37</cantidad_total>
+      <cantidad_operativa>35</cantidad_operativa>
+      <cantidad_baja>2</cantidad_baja>
+      <especificaciones>
+        <pantalla>23.8 pulgadas IPS</pantalla>
+        <resolucion>1920x1080 Full HD</resolucion>
+        <tiempo_respuesta>5 ms</tiempo_respuesta>
+        <brillo>250 cd/m²</brillo>
+        <conexiones>DisplayPort, HDMI, VGA, USB Hub</conexiones>
+        <ajuste>Altura, Inclinación, Pivote</ajuste>
+      </especificaciones>
+      <unidades>
+        <unidad id="MON-001" num_serie="HPED-E243-001" estado="Operativo" puesto="P01"/>
+        <unidad id="MON-002" num_serie="HPED-E243-002" estado="Operativo" puesto="P02"/>
+        <unidad id="MON-003" num_serie="HPED-E243-003" estado="Operativo" puesto="P03"/>
+        <unidad id="MON-004" num_serie="HPED-E243-004" estado="Operativo" puesto="P04"/>
+        <unidad id="MON-005" num_serie="HPED-E243-005" estado="Operativo" puesto="P05"/>
+        <unidad id="MON-006" num_serie="HPED-E243-006" estado="Operativo" puesto="P06"/>
+        <unidad id="MON-007" num_serie="HPED-E243-007" estado="Operativo" puesto="P07"/>
+        <unidad id="MON-008" num_serie="HPED-E243-008" estado="Operativo" puesto="P08"/>
+        <unidad id="MON-009" num_serie="HPED-E243-009" estado="Operativo" puesto="P09"/>
+        <unidad id="MON-010" num_serie="HPED-E243-010" estado="Operativo" puesto="P10"/>
+        <unidad id="MON-011" num_serie="HPED-E243-011" estado="Operativo" puesto="P11"/>
+        <unidad id="MON-012" num_serie="HPED-E243-012" estado="Operativo" puesto="P12"/>
+        <unidad id="MON-013" num_serie="HPED-E243-013" estado="Operativo" puesto="P13"/>
+        <unidad id="MON-014" num_serie="HPED-E243-014" estado="Operativo" puesto="P14"/>
+        <unidad id="MON-015" num_serie="HPED-E243-015" estado="Operativo" puesto="P15"/>
+        <unidad id="MON-016" num_serie="HPED-E243-016" estado="Operativo" puesto="P16"/>
+        <unidad id="MON-017" num_serie="HPED-E243-017" estado="Operativo" puesto="P17"/>
+        <unidad id="MON-018" num_serie="HPED-E243-018" estado="Operativo" puesto="P18"/>
+        <unidad id="MON-019" num_serie="HPED-E243-019" estado="Operativo" puesto="P19"/>
+        <unidad id="MON-020" num_serie="HPED-E243-020" estado="Operativo" puesto="P20"/>
+        <unidad id="MON-021" num_serie="HPED-E243-021" estado="Operativo" puesto="P21"/>
+        <unidad id="MON-022" num_serie="HPED-E243-022" estado="Operativo" puesto="P22"/>
+        <unidad id="MON-023" num_serie="HPED-E243-023" estado="Operativo" puesto="P23"/>
+        <unidad id="MON-024" num_serie="HPED-E243-024" estado="Operativo" puesto="P24"/>
+        <unidad id="MON-025" num_serie="HPED-E243-025" estado="Operativo" puesto="P25"/>
+        <unidad id="MON-026" num_serie="HPED-E243-026" estado="Operativo" puesto="P26"/>
+        <unidad id="MON-027" num_serie="HPED-E243-027" estado="Operativo" puesto="P27"/>
+        <unidad id="MON-028" num_serie="HPED-E243-028" estado="Operativo" puesto="P28"/>
+        <unidad id="MON-029" num_serie="HPED-E243-029" estado="Operativo" puesto="P29"/>
+        <unidad id="MON-030" num_serie="HPED-E243-030" estado="Operativo" puesto="P30"/>
+        <unidad id="MON-031" num_serie="HPED-E243-031" estado="Operativo" puesto="PROFESOR"/>
+        <unidad id="MON-032" num_serie="HPED-E243-032" estado="Operativo" puesto="ALMACEN"/>
+        <unidad id="MON-033" num_serie="HPED-E243-033" estado="Operativo" puesto="ALMACEN"/>
+        <unidad id="MON-034" num_serie="HPED-E243-034" estado="Operativo" puesto="ALMACEN"/>
+        <unidad id="MON-035" num_serie="HPED-E243-035" estado="Operativo" puesto="ALMACEN"/>
+        <unidad id="MON-036" num_serie="HPED-E243-036" estado="Baja" puesto="BAJA"/>
+        <unidad id="MON-037" num_serie="HPED-E243-037" estado="Baja" puesto="BAJA"/>
+      </unidades>
+      <observaciones>2 unidades dadas de baja por pantalla deteriorada</observaciones>
+    </producto>
+
+  </categoria>
+
+  <!-- ==================== CATEGORÍA: RED Y CONECTIVIDAD ==================== -->
+  <categoria id="CAT-003" nombre="Red y Conectividad">
+
+    <producto id="PROD-005">
+      <nombre>Switch Cisco Catalyst WS-C2960X-48</nombre>
+      <marca>Cisco</marca>
+      <modelo>Catalyst WS-C2960X-48FPS-L</modelo>
+      <tipo>Switch Gestionable 48 Puertos</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Rack de red</ubicacion>
+      <cantidad_total>5</cantidad_total>
+      <cantidad_operativa>5</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <puertos_ethernet>48 x GigabitEthernet PoE+</puertos_ethernet>
+        <puertos_uplink>4 x SFP+ 10G</puertos_uplink>
+        <velocidad>1 Gbps por puerto</velocidad>
+        <poe>PoE+ 740W</poe>
+        <gestion>Cisco IOS, Web UI, SNMP</gestion>
+        <montaje>Rack 1U</montaje>
+      </especificaciones>
+      <unidades>
+        <unidad id="SW-001" num_serie="CISCO-2960-001" estado="Operativo" puesto="RACK-1U01"/>
+        <unidad id="SW-002" num_serie="CISCO-2960-002" estado="Operativo" puesto="RACK-1U02"/>
+        <unidad id="SW-003" num_serie="CISCO-2960-003" estado="Operativo" puesto="RACK-1U03"/>
+        <unidad id="SW-004" num_serie="CISCO-2960-004" estado="Operativo" puesto="RACK-1U04"/>
+        <unidad id="SW-005" num_serie="CISCO-2960-005" estado="Operativo" puesto="RACK-1U05"/>
+      </unidades>
+      <observaciones>Switches principales para la infraestructura de red del aula. Configurados con VLANs de prácticas</observaciones>
+    </producto>
+
+    <producto id="PROD-006">
+      <nombre>Punto de Acceso TP-Link EAP225</nombre>
+      <marca>TP-Link</marca>
+      <modelo>EAP225 AC1350</modelo>
+      <tipo>Punto de Acceso WiFi Dual Band</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Techo y paredes</ubicacion>
+      <cantidad_total>7</cantidad_total>
+      <cantidad_operativa>7</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <wifi_estandar>802.11ac Dual Band</wifi_estandar>
+        <banda_24ghz>450 Mbps</banda_24ghz>
+        <banda_5ghz>867 Mbps</banda_5ghz>
+        <puertos>1 x GigabitEthernet PoE</puertos>
+        <antenas>6 x Antenas internas</antenas>
+        <gestion>Omada Controller / App</gestion>
+      </especificaciones>
+      <unidades>
+        <unidad id="AP-TP-001" num_serie="TPLINK-EAP-001" estado="Operativo" puesto="TECHO-A"/>
+        <unidad id="AP-TP-002" num_serie="TPLINK-EAP-002" estado="Operativo" puesto="TECHO-B"/>
+        <unidad id="AP-TP-003" num_serie="TPLINK-EAP-003" estado="Operativo" puesto="TECHO-C"/>
+        <unidad id="AP-TP-004" num_serie="TPLINK-EAP-004" estado="Operativo" puesto="PARED-N"/>
+        <unidad id="AP-TP-005" num_serie="TPLINK-EAP-005" estado="Operativo" puesto="PARED-S"/>
+        <unidad id="AP-TP-006" num_serie="TPLINK-EAP-006" estado="Operativo" puesto="PARED-E"/>
+        <unidad id="AP-TP-007" num_serie="TPLINK-EAP-007" estado="Operativo" puesto="PASILLO"/>
+      </unidades>
+      <observaciones>Gestionados mediante Omada Controller. Cobertura WiFi completa del aula</observaciones>
+    </producto>
+
+    <producto id="PROD-007">
+      <nombre>Punto de Acceso D-Link DAP-2610</nombre>
+      <marca>D-Link</marca>
+      <modelo>DAP-2610 AC1300</modelo>
+      <tipo>Punto de Acceso WiFi Wave 2 MU-MIMO</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Zonas complementarias</ubicacion>
+      <cantidad_total>10</cantidad_total>
+      <cantidad_operativa>10</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <wifi_estandar>802.11ac Wave 2, MU-MIMO</wifi_estandar>
+        <banda_24ghz>400 Mbps</banda_24ghz>
+        <banda_5ghz>867 Mbps</banda_5ghz>
+        <puertos>1 x GigabitEthernet PoE</puertos>
+        <antenas>4 x Antenas internas</antenas>
+        <gestion>DWC-1000 Controller / Web</gestion>
+      </especificaciones>
+      <unidades>
+        <unidad id="AP-DL-001" num_serie="DLINK-DAP-001" estado="Operativo" puesto="ZONA-A1"/>
+        <unidad id="AP-DL-002" num_serie="DLINK-DAP-002" estado="Operativo" puesto="ZONA-A2"/>
+        <unidad id="AP-DL-003" num_serie="DLINK-DAP-003" estado="Operativo" puesto="ZONA-B1"/>
+        <unidad id="AP-DL-004" num_serie="DLINK-DAP-004" estado="Operativo" puesto="ZONA-B2"/>
+        <unidad id="AP-DL-005" num_serie="DLINK-DAP-005" estado="Operativo" puesto="ZONA-C1"/>
+        <unidad id="AP-DL-006" num_serie="DLINK-DAP-006" estado="Operativo" puesto="ZONA-C2"/>
+        <unidad id="AP-DL-007" num_serie="DLINK-DAP-007" estado="Operativo" puesto="ZONA-D1"/>
+        <unidad id="AP-DL-008" num_serie="DLINK-DAP-008" estado="Operativo" puesto="ZONA-D2"/>
+        <unidad id="AP-DL-009" num_serie="DLINK-DAP-009" estado="Operativo" puesto="ZONA-E1"/>
+        <unidad id="AP-DL-010" num_serie="DLINK-DAP-010" estado="Operativo" puesto="ZONA-E2"/>
+      </unidades>
+      <observaciones>Complementan la cobertura WiFi junto con los APs TP-Link</observaciones>
+    </producto>
+
+  </categoria>
+
+  <!-- ==================== CATEGORÍA: IMPRESIÓN ==================== -->
+  <categoria id="CAT-004" nombre="Impresión y Fabricación">
+
+    <producto id="PROD-008">
+      <nombre>Impresora 3D Creality Ender-3 V2</nombre>
+      <marca>Creality</marca>
+      <modelo>Ender-3 V2</modelo>
+      <tipo>Impresora 3D FDM</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Mesa de proyectos</ubicacion>
+      <cantidad_total>1</cantidad_total>
+      <cantidad_operativa>1</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <tecnologia>FDM (Fused Deposition Modeling)</tecnologia>
+        <volumen_impresion>220x220x250 mm</volumen_impresion>
+        <materiales>PLA, ABS, PETG, TPU</materiales>
+        <precision>±0.1 mm</precision>
+        <velocidad_max>180 mm/s</velocidad_max>
+        <pantalla>LCD Colorida 4.3"</pantalla>
+      </especificaciones>
+      <unidades>
+        <unidad id="IMP3D-001" num_serie="ENDER3V2-001" estado="Operativo" puesto="MESA-PROYECTOS"/>
+      </unidades>
+      <observaciones>Para proyectos de fabricación de carcasas y componentes de red. Requiere filamento PLA</observaciones>
+    </producto>
+
+    <producto id="PROD-009">
+      <nombre>Impresora HP LaserJet Pro MFP M428</nombre>
+      <marca>HP</marca>
+      <modelo>LaserJet Pro MFP M428fdw</modelo>
+      <tipo>Impresora Láser Multifunción</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Mesa del profesor</ubicacion>
+      <cantidad_total>1</cantidad_total>
+      <cantidad_operativa>1</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <tecnologia>Láser Monocromo</tecnologia>
+        <velocidad>38 ppm</velocidad>
+        <resolucion>1200x1200 dpi</resolucion>
+        <funciones>Impresión, Escaneado, Copia, Fax</funciones>
+        <conectividad>WiFi, Ethernet, USB, NFC</conectividad>
+        <duplex>Automático</duplex>
+      </especificaciones>
+      <unidades>
+        <unidad id="IMP-001" num_serie="HPLJ-M428-001" estado="Operativo" puesto="MESA-PROFESOR"/>
+      </unidades>
+      <observaciones>Impresora principal del aula para documentación y prácticas</observaciones>
+    </producto>
+
+  </categoria>
+
+  <!-- ==================== CATEGORÍA: HERRAMIENTAS ==================== -->
+  <categoria id="CAT-005" nombre="Herramientas y Kits">
+
+    <producto id="PROD-010">
+      <nombre>Kit de Herramientas para Montaje Hardware</nombre>
+      <marca>Generic Pro Tools</marca>
+      <modelo>HW-KIT-PRO-32</modelo>
+      <tipo>Kit de Herramientas Hardware</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Armario de herramientas</ubicacion>
+      <cantidad_total>6</cantidad_total>
+      <cantidad_operativa>6</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <contenido>Destornilladores Phillips/Torx/Planos, Alicates, Pinzas ESD, Pulsera antiestática, Espátulas, Extractor de tornillos</contenido>
+        <num_piezas>32 piezas</num_piezas>
+        <proteccion_esd>Sí</proteccion_esd>
+        <maletin>Maletín rígido con espuma</maletin>
+      </especificaciones>
+      <unidades>
+        <unidad id="KIT-HW-001" num_serie="KITHW-001" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-HW-002" num_serie="KITHW-002" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-HW-003" num_serie="KITHW-003" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-HW-004" num_serie="KITHW-004" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-HW-005" num_serie="KITHW-005" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-HW-006" num_serie="KITHW-006" estado="Operativo" puesto="ARMARIO-HERR"/>
+      </unidades>
+      <observaciones>Kits completos para prácticas de montaje y desmontaje de hardware</observaciones>
+    </producto>
+
+    <producto id="PROD-011">
+      <nombre>Kit de Herramientas para Testeo de Latiguillos</nombre>
+      <marca>Fluke Networks</marca>
+      <modelo>CableIQ-KIT</modelo>
+      <tipo>Kit de Testeo de Cables de Red</tipo>
+      <estado>Activo</estado>
+      <ubicacion>Aula 1º ASIR - Armario de herramientas</ubicacion>
+      <cantidad_total>5</cantidad_total>
+      <cantidad_operativa>5</cantidad_operativa>
+      <cantidad_baja>0</cantidad_baja>
+      <especificaciones>
+        <contenido>Tester de cables RJ45/RJ11, Crimpadora Cat5e/Cat6, Pelacables, Ponchadora Krone, Certificador de cable básico, Latiguillos de muestra</contenido>
+        <categorias>Cat5e, Cat6, Cat6A</categorias>
+        <tester>Comprobación de cortocircuitos, inversiones, interrupciones</tester>
+        <maletin>Bolsa de transporte</maletin>
+      </especificaciones>
+      <unidades>
+        <unidad id="KIT-NET-001" num_serie="KITNET-001" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-NET-002" num_serie="KITNET-002" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-NET-003" num_serie="KITNET-003" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-NET-004" num_serie="KITNET-004" estado="Operativo" puesto="ARMARIO-HERR"/>
+        <unidad id="KIT-NET-005" num_serie="KITNET-005" estado="Operativo" puesto="ARMARIO-HERR"/>
+      </unidades>
+      <observaciones>Kits para prácticas de crimping y certificación de latiguillos de red</observaciones>
+    </producto>
+
+  </categoria>
+
+  <!-- ==================== RESUMEN GLOBAL ==================== -->
+  <resumen>
+    <total_categorias>5</total_categorias>
+    <total_productos>11</total_productos>
+    <total_unidades>121</total_unidades>
+    <unidades_operativas>119</unidades_operativas>
+    <unidades_baja>2</unidades_baja>
+    <porcentaje_operatividad>98.35</porcentaje_operatividad>
+  </resumen>
+
+</inventario>
