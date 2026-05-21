@@ -118,6 +118,7 @@
   <!-- Tipo: Producto del inventario -->
   <xs:complexType name="tipoProducto">
     <xs:sequence>
+      
       <xs:element name="nombre"              type="tipoTextoRequerido"/>
       <xs:element name="marca"               type="tipoTextoRequerido"/>
       <xs:element name="modelo"              type="tipoTextoRequerido"/>

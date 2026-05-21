@@ -283,12 +283,12 @@ function loadKPIs(xml) {
 function renderInventory(xml) {
 
   inventoryContent.innerHTML = "";
-
   const categorias = xml.querySelectorAll("categoria");
 
   categorias.forEach(categoria => {
 
     const categoryName = categoria.getAttribute("nombre");
+    const imagen = categoria.querySelector("imagen")?.textContent || "";
 
     sidebarCategories.innerHTML += `
       <a class="nav-item" href="#${categoryName}">
@@ -302,20 +302,35 @@ function renderInventory(xml) {
     section.className = "section";
     section.id = categoryName;
 
-    section.innerHTML = `
-      <div class="section-header">
+section.innerHTML = `
+  <div class="section-header">
 
-        <div class="section-title">
-          <div class="cat-icon">🖥️</div>
-          ${categoryName}
-        </div>
+    <div class="section-title">
+      <img src="${imagen}" class="cat-image" alt="${categoryName}">
+      <div class="cat-icon">🖥️</div>
+      ${categoryName}
+    </div>
 
-        <div class="section-line"></div>
+    <div class="section-line"></div>
 
-      </div>
+  </div>
 
-      <div class="products-grid"></div>
-    `;
+  <div class="products-grid"></div>
+`;
+    // section.innerHTML = `
+    //   <div class="section-header">
+        
+    //     <div class="section-title">
+    //       <div class="cat-icon">🖥️</div>
+    //       ${categoryName}
+    //     </div>
+
+    //     <div class="section-line"></div>
+
+    //   </div>
+
+    //   <div class="products-grid"></div>
+    // `;
 
     const grid = section.querySelector(".products-grid");
 

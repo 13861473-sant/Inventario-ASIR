@@ -64,9 +64,10 @@
         <unidad id="HP-PC-030" num_serie="HP800G5-030" estado="Operativo" puesto="P30"/>
       </unidades>
       <observaciones>Equipos principales del aula para uso diario de los alumnos</observaciones>
-    </producto>
+    </producto> 
 
     <producto id="PROD-002">
+     
       <nombre>Ordenador HP EliteDesk 800 G5 (Repuesto)</nombre>
       <marca>HP</marca>
       <modelo>EliteDesk 800 G5</modelo>
@@ -107,7 +108,7 @@
 
   <!-- ==================== CATEGORÍA: PERIFÉRICOS ==================== -->
   <categoria id="CAT-002" nombre="Periféricos">
-    <imagen>imagenes/perifericos.jpg</imagen>
+    <imagen>../src/imagenes/TECLADO.jpeg</imagen>
     <producto id="PROD-003">
       <nombre>Teclado HP Smart Card CCID</nombre>
       <marca>HP</marca>
@@ -136,6 +137,7 @@
     </producto>
 
     <producto id="PROD-004">
+      
       <nombre>Monitor HP EliteDisplay E243</nombre>
       <marca>HP</marca>
       <modelo>EliteDisplay E243</modelo>
@@ -199,7 +201,7 @@
 
   <!-- ==================== CATEGORÍA: RED Y CONECTIVIDAD ==================== -->
   <categoria id="CAT-003" nombre="Red y Conectividad">
-    <imagen>imagenes/red.jpg</imagen>
+    <imagen>../src/imagenes/switch.jpeg</imagen>
     <producto id="PROD-005">
       <nombre>Switch Cisco Catalyst WS-C2960X-48</nombre>
       <marca>Cisco</marca>
@@ -229,6 +231,7 @@
     </producto>
 
     <producto id="PROD-006">
+      
       <nombre>Punto de Acceso TP-Link EAP225</nombre>
       <marca>TP-Link</marca>
       <modelo>EAP225 AC1350</modelo>
@@ -259,6 +262,7 @@
     </producto>
 
     <producto id="PROD-007">
+     
       <nombre>Punto de Acceso D-Link DAP-2610</nombre>
       <marca>D-Link</marca>
       <modelo>DAP-2610 AC1300</modelo>
@@ -295,7 +299,7 @@
 
   <!-- ==================== CATEGORÍA: IMPRESIÓN ==================== -->
   <categoria id="CAT-004" nombre="Impresión y Fabricación">
-    <imagen>imagenes/impresion.jpg</imagen>
+    <imagen>../src/imagenes/impresora.jpeg</imagen>
     <producto id="PROD-008">
       <nombre>Impresora 3D Creality Ender-3 V2</nombre>
       <marca>Creality</marca>
@@ -348,7 +352,7 @@
 
   <!-- ==================== CATEGORÍA: HERRAMIENTAS ==================== -->
   <categoria id="CAT-005" nombre="Herramientas y Kits">
-    <imagen>imagenes/herramientas.jpg</imagen>
+    <imagen>../src/imagenes/kithardware.jpeg</imagen>
     <producto id="PROD-010">
       <nombre>Kit de Herramientas para Montaje Hardware</nombre>
       <marca>Generic Pro Tools</marca>
