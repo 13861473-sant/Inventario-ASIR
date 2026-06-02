@@ -31,8 +31,6 @@ InventarioHardware/
 ├── data/
 |      └── main_data.xml         #Base de datos de productos
 ├── docs/
-│   └── estilos.css     # Hoja de estilos
-│
 ├── schemas/
 │   └── schema.xsd  # Esquema de validación
 │──src/
